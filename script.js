@@ -35,11 +35,10 @@ function createTh() {
 	table.appendChild(tr);
 }
 
-
 function createTd() {
-	MOUNTAINS.map(mountain => {
+	MOUNTAINS.forEach(mountain => {
 	// create row
-		let tr = document.createElement('tr');
+		const tr = document.createElement('tr');
 
 		let nameTd = document.createElement('td');
 		nameTd.textContent = mountain.name;
@@ -55,8 +54,8 @@ function createTd() {
 
 		table.append(tr);
 	});
+	
 }
-
 
 createTh();
 createTd();
