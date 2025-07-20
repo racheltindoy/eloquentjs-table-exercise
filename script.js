@@ -35,6 +35,7 @@ function createTh() {
 	table.appendChild(tr);
 }
 
+
 function createTd() {
 	MOUNTAINS.forEach(mountain => {
 	// create row
