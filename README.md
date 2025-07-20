@@ -35,9 +35,3 @@ const MOUNTAINS = [
     { name: "Mont Blanc", height: 4807, place: "France/Italy" },
     { name: "Mount Fuji", height: 3776, place: "Japan" }
 ];
-🛠️ Key Concepts Practiced
-JavaScript Arrays and Objects
-
-Looping through data
-
-Dynamic HTML element creation
