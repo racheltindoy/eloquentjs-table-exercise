@@ -20,38 +20,43 @@ const MOUNTAINS = [
 const mountainCon = document.querySelector('#mountains');
 const table = document.createElement('table');
 mountainCon.appendChild(table);
-let thArr = [];
-
-// th
-const th = document.createElement('th');
-
-// tr
-let tr = document.createElement('tr');
 
 
-MOUNTAINS.forEach((mountain) => {
-	
+const objKeys =  Object.keys(MOUNTAINS[0]);
+const objLength = Object.keys(MOUNTAINS[0]).length;
 
-	// get each object property name
-	objKeys =  Object.keys(mountain);
-	objLength = Object.keys(mountain).length;
-	// console.log(objKeys);
-
-	// create row per loop
-	table.appendChild(tr);
-
-	// loop through obj property, check if it's already in array
+function createTh() {
+	let tr = document.createElement('tr');
 	for(objKey of objKeys) {
-		if(!thArr.includes(objKey)) {
-			thArr.push(objKey);
-			console.log(`${objKey}`);
-
-			let th = document.createElement('th');
-			tr.appendChild(th);
-			th.innerText = mountain[objKey];
-		}
-		
-		console.log(`${mountain[objKey]}`);
+		let th = document.createElement('th');
+		th.textContent = objKey;
+		tr.appendChild(th);
 	}
+	table.appendChild(tr);
+}
 
-})
+
+function createTd() {
+	MOUNTAINS.map(mountain => {
+	// create row
+		let tr = document.createElement('tr');
+
+		let nameTd = document.createElement('td');
+		nameTd.textContent = mountain.name;
+		tr.appendChild(nameTd);
+
+		let heightTd = document.createElement('td');
+		heightTd.textContent = mountain.height;
+		tr.appendChild(heightTd);
+
+		let placeTd = document.createElement('td');
+		placeTd.textContent = mountain.place;
+		tr.appendChild(placeTd);
+
+		table.append(tr);
+	});
+}
+
+
+createTh();
+createTd();

@@ -1,0 +1,57 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+h1 {
+    color: #4a6f71;
+}
+
+#mountains table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#mountains th, #mountains td {
+    padding: 1rem;
+    text-align: left;
+}
+
+#mountains th {
+    background-color: #6a8e91;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+#mountains td {
+    border-bottom: 1px solid #e0e6eb;
+}
+
+#mountains tr:nth-child(even) td {
+    background-color: #f7f9fa;
+}
+
+#mountains tr:last-child td {
+    border-bottom: none;
+}
+
+#mountains td:nth-child(2) {
+    text-align: right;
+}
+
+#mountains td:nth-child(3) {
+    font-style: italic;
+    color: #6a8e91;
+}
