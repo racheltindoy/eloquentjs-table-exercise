@@ -25,38 +25,41 @@ mountainCon.appendChild(table);
 const objKeys =  Object.keys(MOUNTAINS[0]);
 const objLength = Object.keys(MOUNTAINS[0]).length;
 
+
 function createTh() {
-	let tr = document.createElement('tr');
-	for(objKey of objKeys) {
-		let th = document.createElement('th');
+	const tr = document.createElement('tr');
+
+	objKeys.forEach(objKey => {
+		const th = document.createElement('th');
 		th.textContent = objKey;
 		tr.appendChild(th);
-	}
+	});
+
 	table.appendChild(tr);
+}
+
+
+function createTdForRow(tr, text) {
+	const td = document.createElement('td');
+	td.textContent = text;
+	tr.appendChild(td);
 }
 
 
 function createTd() {
 	MOUNTAINS.forEach(mountain => {
-	// create row
+		// create row
 		const tr = document.createElement('tr');
 
-		let nameTd = document.createElement('td');
-		nameTd.textContent = mountain.name;
-		tr.appendChild(nameTd);
-
-		let heightTd = document.createElement('td');
-		heightTd.textContent = mountain.height;
-		tr.appendChild(heightTd);
-
-		let placeTd = document.createElement('td');
-		placeTd.textContent = mountain.place;
-		tr.appendChild(placeTd);
+		createTdForRow(tr, mountain.name);
+		createTdForRow(tr, mountain.height);
+		createTdForRow(tr, mountain.place);
 
 		table.append(tr);
 	});
 	
 }
+
 
 createTh();
 createTd();
